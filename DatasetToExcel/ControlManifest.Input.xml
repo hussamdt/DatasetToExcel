@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="HTOCollections" constructor="DatasetToExcel" version="1.0.6" display-name-key="DatasetToExcel" description-key="Export Dataset to excel file" control-type="virtual" >
+    
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    
+    <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
+    <data-set name="DatasetToExport" display-name-key="Items">
+      <!-- 'property-set' node represents a unique, configurable property that each record in the dataset must provide. -->
+      <!-- UNCOMMENT TO ADD PROPERTY-SET NODE
+      <property-set name="samplePropertySet" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+      -->
+    </data-set>
+
+    <!-- Button UI props -->
+    <property name="Text" display-name-key="Text" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="IconName" display-name-key="Icon Name" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="InputEvent" display-name-key="Input Event" of-type="SingleLine.Text" usage="input" required="false" />
+    
+    <!-- General props -->
+    <property name="FileName" display-name-key="File Name" of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="Loading" display-name-key="Loading" description-key="Boolean that can be set to set the component in loading state" of-type="TwoOptions" usage="input" required="false" default-value="false" />
+
+    <!-- Styling props -->
+    <property name="TextColor" display-name-key="Text Color" of-type="SingleLine.Text" usage="input" required="false" default-value="black" />
+    <property name="BGColor" display-name-key="Background Color" of-type="SingleLine.Text" usage="input" required="false" default-value="white" />
+    <property name="IconColor" display-name-key="Icon Color" of-type="SingleLine.Text" usage="input" required="false" default-value="black" />
+    <property name="HoverTextColor" display-name-key="Hover Text Color" of-type="SingleLine.Text" usage="input" required="false" default-value="" />
+    <property name="HoverBGColor" display-name-key="Hover Background Color" of-type="SingleLine.Text" usage="input" required="false" default-value="" />
+    <property name="BorderColor" display-name-key="Border Color" of-type="SingleLine.Text" usage="input" required="false" default-value="" />
+    <property name="BorderHoverColor" display-name-key="Border Hover Color" of-type="SingleLine.Text" usage="input" required="false" default-value="" />
+    <property name="BorderWidth" display-name-key="Border Width" of-type="Whole.None" usage="input" required="false" default-value="" />
+    <property name="BorderRadius" display-name-key="Border Radius" of-type="Whole.None" usage="input" required="false" default-value="" />
+    <!-- Styling props -->
+
+
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.8.6" />
+      <platform-library name="Fluent" version="8.29.0" />
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/DatasetToExcel.css" order="1" />
+      <resx path="strings/DatasetToExcel.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
